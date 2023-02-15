@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your account</title>
+</head>
+<body>
+<div>
+    <div id="top" class="bar" style="background: #330033">
+        <a class="logo">
+            <b>
+                <h1 style="color: whitesmoke; font-size:220%;font-family: Perpetua; margin-top: 0px" width="70" height="70"  align="center">
+                    <a class="btn" href="/account/mainAccount" style="font-size:140%">
+                        Books Maze
+
+                </h1>
+            </b>
+        </a>
+    </div>
+</div>
+<div style="margin-left: 500px; margin-top: 100px; font-family: Garamond; color: #330033; font-size:200%;">
+    <b>
+        Your account
+    </b>
+</div>
+<table th:align="center">
+    <tr>
+        <th th:align="left" style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:180%;">Name</th>
+        <td style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:140%;" th:text="${users.name} "></td>
+    </tr>
+    <tr>
+        <th th:align="left" style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:180%;">Username</th>
+        <td style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:140%;" th:text="${users.username}">
+    </tr>
+    <tr>
+        <th th:align="left" style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:180%;">Phone number</th>
+        <td style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:140%;" th:text="${users.phone}">
+    </tr>
+    <tr>
+        <th th:align="left" style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:180%;">Password</th>
+        <td style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:140%;" th:text="${users.password}">
+    </tr>
+
+    <tr>
+        <th th:align="left" style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:180%;">Role</th>
+        <td style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:140%;" th:text="${users.Role}">
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body style="background-color:#f0f0f0; font-family: Garamond; font-size:110%; ">
+<div>
+    <div id="top" class="bar" style="background: #330033">
+        <a class="logo">
+            <b>
+                <h1 style="color: whitesmoke; font-size:220%;font-family: Perpetua; margin-top: 0px" width="70" height="70"  align="center">Login</h1>
+            </b>
+
+
+        </a>
+    </div>
+</div>
+
+<div align="center" style="margin-top: 100px; font-family: Garamond; color: #330033; font-size:200%;">
+    <b>
+        You need to log in to read the book
+    </b>
+</div>
+
+<table th:align="center" style="background: white; margin-left: 550px; margin-right: 450px; margin-bottom: 150px; margin-top: 150px">
+<form action="#" th:action="@{/verifyUser}" th:object="${users}" th:method="POST">
+    <tr>
+        <th th:align="left" style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:180%;">Name</th>
+        <td>  <input type="text" placeholder="Enter Username" name="username" required></td>
+    </tr>
+
+    <tr>
+        <th th:align="left" style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:180%;">Password</th>
+        <td> <input type="password" placeholder="Enter Password" name="password" required></td>
+    </tr>
+
+    <tr>
+        <th th:align="left" style="margin-left: 200px; font-family: Garamond; color: #330033; font-size:180%;">Role</th>
+        <td> <input type="text" placeholder="Enter admin or user" name="role" required></td>
+    </tr>
+
+    <td th:align="right"> <input th:align="right" style="font-family: Garamond; color: #330033; font-size:120%;" type="submit" value="Login">
+    </td>
+</form>
+<td>
+    <form action="../account/create" method="post">
+        <input th:align="right" style="font-family: Garamond; color: #330033; font-size:120%;" type="submit" value="Register">
+    </form>
+</td>
+</table>
+</body>
+</html>

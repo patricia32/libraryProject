@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:font-family="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Books Maze</title>
+</head>
+<body style="background-color:#f0f0f0; font-family: Garamond; font-size:110%; ">
+<div>
+    <div id="top" class="bar" style="background: #330033">
+        <a class="logo">  <b>  <h1 style="color: whitesmoke; font-size:220%;font-family: Perpetua; margin-top: 0px" width="70" height="70"  align="center">Books Maze</h1>  </b> </a>
+        <div  style="background: #4b014b; font-size: 100%; font-family: Garamond; color: whitesmoke"; align="center" >
+            <form action="#" th:action="@{/searchBooks}" th:object="${books}" th:method="POST">
+                <input type="text" name="title" placeholder="Search by title" aria-label="SearchByTitle" autocomplete="off" style="font-size: 100%; font-family: Garamond;">
+                <input type="submit" value="Search" class="search-bar-submit" aria-label="Search submit" style="font-size: 100%; font-family: Garamond">
+            </form>
+        </div>
+    </div>
+</div>
+<div id="headerBar" align="center">
+    <div class="search-component"; align="right"  style="background: white">
+        <a class="btn primary" href="/account/login" >Login</a>
+        <a class="btn primary" href="/account/create" >Sign Up</a>
+    </div>
+</div>
+
+<p align="center">
+    <a class="btn" href="/books" style="font-size:140%">All Books</a>
+    <a class="btn" href="/bestseller" style="font-size:140%">Bestseller</a>
+    <a class="btn" href="/englishBooks" style="font-size:140%">English Books</a>
+    <a class="btn" href="/romanianBooks" style="font-size:140%">Romanian Books</a>
+</p>
+<table id="bestsellers" style="margin-left: 100px; margin-right: 100px; background-color: white; border-top: 1px solid lightgray; padding: 15px;" align="center" cellspacing="10" >
+    <div style="margin-left: 100px; margin-right: 100px; background-color:white; font-family: Garamond; color: #330033; font-size:200%;">  <b> Bestsellers </b> </div>
+        <th th:each="book : ${booksBestseller}" >
+            <p> <img th:src="${book.imagePath1}" width="100"/> </p>
+
+            <a class="btn" th:href="${book.title}"  th:text="${book.title}" >"</a>
+            <p>
+            <form action="/loginRead" method="post">
+            <input type="submit" value="Read" class="search-bar-submit" aria-label="Search submit" style="font-size: 100%; font-family: Garamond;background-color:#4b014b;color:white ">
+            </form>
+            </p>
+        </th>
+
+</table>
+<table id="fiction" style="margin-left: 100px; margin-right: 100px; background-color: white; border-top: 1px solid lightgray; padding: 15px;" align="center" cellspacing="10" >
+    <div style="margin-left: 100px; margin-right: 100px; background-color:white; font-family: Garamond; color: #330033; font-size:200%;"> <b>Fiction  </b>   </div>
+    <th th:each="book : ${booksFiction}" >
+        <p> <img th:src="${book.imagePath1}" width="100"/>
+        <p th:text="${book.title}"></p>
+        <form action="/loginRead" method="post">
+            <input type="submit" value="Read" class="search-bar-submit" aria-label="Search submit" style="font-size: 100%; font-family: Garamond;background-color:#4b014b;color:white ">
+        </form>
+    </th>
+</table>
+<table id="personalDevelopment" style="margin-left: 100px; margin-right: 100px; background-color: white; border-top: 1px solid lightgray; padding: 15px;" align="center" cellspacing="10" >
+    <div style="margin-left: 100px; margin-right: 100px; background-color:white; font-family: Garamond; color: #330033; font-size:200%;">
+        <b>Personal Development</b>
+    </div>
+    <th th:each="book : ${booksPersonalDevelopment}" >
+        <p> <img th:src="${book.imagePath1}" width="100"/>
+        <p th:text="${book.title}">
+        </p>
+
+        <form action="/loginRead" method="post">
+            <input type="submit" value="Read" class="search-bar-submit" aria-label="Search submit" style="font-size: 100%; font-family: Garamond;background-color:#4b014b;color:white ">
+        </form>
+    </th>
+</table>
+<table id="booksUniversalLiterature" style="margin-left: 100px; margin-right: 100px; background-color: white; border-top: 1px solid lightgray; padding: 15px;" align="center" cellspacing="10" >
+    <div style="margin-left: 100px; margin-right: 100px; background-color:white; font-family: Garamond; color: #330033; font-size:200%;">
+        <b>
+            Universal Literature
+        </b>
+    </div>
+    <th th:each="book : ${booksUniversalLiterature}" >
+        <p> <img th:src="${book.imagePath1}" width="100"/>
+        <p th:text="${book.title}">
+        </p>
+        <form action="/loginRead" method="post">
+            <input type="submit" value="Read" class="search-bar-submit" aria-label="Search submit" style="font-size: 100%; font-family: Garamond;background-color:#4b014b;color:white ">
+        </form>
+    </th>
+</table>
+</body>
+</html>
